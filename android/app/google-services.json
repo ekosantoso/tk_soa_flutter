@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "459284156377",
+    "project_id": "tugassoa-d546a",
+    "storage_bucket": "tugassoa-d546a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459284156377:android:5cec654f76b6e9069f93c8",
+        "android_client_info": {
+          "package_name": "com.soa.tk_soa_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459284156377-hkhejodg3tus0p8igdlr05vttb49ktfd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.soa.tk_soa_flutter",
+            "certificate_hash": "29bb9455a81abd863aee5045c66d66f94fd2c00e"
+          }
+        },
+        {
+          "client_id": "459284156377-4vbnufbp403ap23lif0v60disrk6ch8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArWTf0_goYS8tF2e8QlcgT_656qKnPq48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459284156377-4vbnufbp403ap23lif0v60disrk6ch8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
