@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tk_soa_flutter/widgets/listrik.dart';
 
 
 
@@ -69,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           body: TabBarView(
             children: [
-              Text("LISTRIK"),
+              listrik(),
               Text("INTERNET"),
               Text("AIR"),
             ],

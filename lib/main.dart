@@ -1,13 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tk_soa_flutter/providers/listrikprovider.dart';
 import 'package:tk_soa_flutter/screens/home_screen.dart';
 import 'package:tk_soa_flutter/screens/login_screen.dart';
 import 'package:tk_soa_flutter/screens/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final FirebaseApp app=await Firebase.initializeApp(); //fb+
+  final FirebaseApp app = await Firebase.initializeApp(); //fb+
   runApp(MyApp());
 }
 
@@ -15,23 +17,24 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
+    return ChangeNotifierProvider.value(
+      value: ListrikProvider(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: StreamBuilder(
+            stream: FirebaseAuth.instance.authStateChanges(),
+            builder: (ctx, userSnapshot) {
+              if (userSnapshot.connectionState == ConnectionState.waiting)
+                return SplashScreen();
+              if (userSnapshot.hasData) {
+                return HomeScreen();
+              }
+              return LoginScreen();
+            }),
       ),
-      home: StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (ctx, userSnapshot) {
-            if(userSnapshot.connectionState==ConnectionState.waiting)
-              return SplashScreen();
-            if (userSnapshot.hasData) {
-              return HomeScreen();
-            }
-            return LoginScreen();
-
-          }),
     );
   }
 }
