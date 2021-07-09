@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tk_soa_flutter/widgets/listrik.dart';
+import 'package:tk_soa_flutter/widgets/tv.dart';
 
 
 
@@ -63,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               tabs: [
                 Text("LISTRIK"),
-                Text("INTERNET"),
+                Text("TV KABEL"),
                 Text("AIR"),
               ],
             ),
@@ -71,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
           body: TabBarView(
             children: [
               listrik(),
-              Text("INTERNET"),
+              TV(),
               Text("AIR"),
             ],
           ),
