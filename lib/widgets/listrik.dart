@@ -194,21 +194,45 @@ class _listrikState extends State<listrik> {
                     );
                   } else {
                     return Consumer<ListrikProvider>(
-                        builder: (ctx, orderData, child) => SizedBox(
-                              width: 300,
-                              height: 100,
-                              child: ListView.builder(
-                                itemBuilder: (ctx, i) => ListrikItem(
-                                    id: listrik.items[i]!.id,
-                                    jenis: listrik.items[i]!.jenis,
-                                    idtagihan: listrik.items[i]!.idtagihan,
-                                    nominal: listrik.items[i]!.nominal,
-                                    idpelanggan: listrik.items[i]!.idpelanggan,
-                                    transactiondate:
-                                        listrik.items[i]!.transactiondate),
-                                itemCount: listrik.items.length,
+                      builder: (ctx, orderData, child) => SingleChildScrollView(
+                        physics: ScrollPhysics(),
+                        child: Column(
+                          children: [
+                            Row(children: [
+                              SizedBox(
+                                child: Text("Jenis"),
+                                width: 85,
                               ),
-                            ));
+                              SizedBox(
+                                child: Text("Id Pelanggan"),
+                                width: 70,
+                              ),
+                              SizedBox(
+                                child: Text("Nominal"),
+                                width: 70,
+                              ),
+                              SizedBox(
+                                child: Text("Tanggal"),
+                                width: 85,
+                              ),
+                            ],),
+                            ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              itemBuilder: (ctx, i) => ListrikItem(
+                                  id: listrik.items[i]!.id,
+                                  jenis: listrik.items[i]!.jenis,
+                                  idtagihan: listrik.items[i]!.idtagihan,
+                                  nominal: listrik.items[i]!.nominal,
+                                  idpelanggan: listrik.items[i]!.idpelanggan,
+                                  transactiondate:
+                                      listrik.items[i]!.transactiondate),
+                              itemCount: listrik.items.length,
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
                   }
                 }
               },

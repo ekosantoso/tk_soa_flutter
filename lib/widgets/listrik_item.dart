@@ -23,11 +23,19 @@ class ListrikItem extends StatelessWidget {
       children: [
         SizedBox(
           child: Text(this.jenis),
-          width: 100,
+          width: 85,
         ),
         SizedBox(
           child: Text(this.idtagihan),
-          width: 100,
+          width: 70,
+        ),
+        SizedBox(
+          child: Text("Rp "+this.nominal.toString()),
+          width: 70,
+        ),
+        SizedBox(
+          child: Text(this.transactiondate.toIso8601String()),
+          width: 85,
         ),
       ],
     );
