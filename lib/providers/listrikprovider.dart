@@ -46,7 +46,7 @@ class ListrikProvider with ChangeNotifier {
   }
 
   Future<void> addListrik(Listrik listrikItem) async {
-    var url = Uri.parse('http://34.101.81.236:8777/tugassoa/listrik');
+    var url = Uri.parse('http://34.101.248.1:8777/tugassoa/listrik');
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('yyyy-MM-dd hh:mm:ss').format(now);
     final timestamp = DateTime.now();
@@ -76,7 +76,7 @@ class ListrikProvider with ChangeNotifier {
   }
 
   Future<void> fetchAndSetListrik(String uid) async {
-    var url = Uri.parse('http://34.101.81.236:8777/tugassoa/listrik/$uid');
+    var url = Uri.parse('http://34.101.248.1:8777/tugassoa/listrik/$uid');
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body);

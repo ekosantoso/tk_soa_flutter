@@ -24,7 +24,7 @@ class _TVState extends State<TV> {
     _getResult(FirebaseAuth.instance.currentUser!.uid);
   }
   Future<void> addTV(String user,String provider,String nopelanggan) async {
-    var url = Uri.parse('http://34.101.81.236/tv/bayartv.php');
+    var url = Uri.parse('http://34.101.248.1/tv/bayartv.php');
 
     Map<String,String> headers = {
       'Content-type' : 'application/x-www-form-urlencoded',
@@ -39,7 +39,7 @@ class _TVState extends State<TV> {
     _getResult(FirebaseAuth.instance.currentUser!.uid);
   }
   Future<void> _getResult(String user) async {
-    var url = Uri.parse('http://34.101.81.236/tv/historytv.php');
+    var url = Uri.parse('http://34.101.248.1/tv/historytv.php');
 
     Map<String,String> headers = {
       'Content-type' : 'application/x-www-form-urlencoded',
