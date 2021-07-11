@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tk_soa_flutter/widgets/air.dart';
 import 'package:tk_soa_flutter/widgets/listrik.dart';
 import 'package:tk_soa_flutter/widgets/tv.dart';
 
@@ -73,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               listrik(),
               TV(),
-              Text("AIR"),
+              air(),
             ],
           ),
 
